@@ -13,9 +13,8 @@ export function Users() {
     if (loading) return <p>Chargement...</p>;
     if (error) return <p>Erreur : {error.message}</p>;
 
-    const list = Array.isArray(data) ? data : [];
 
-    const filtered = list.filter(user =>
+    const filtered = data.filter(user =>
         user.name.toLowerCase().includes(search.toLowerCase())
     );
 
